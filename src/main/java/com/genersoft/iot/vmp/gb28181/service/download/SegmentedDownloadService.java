@@ -591,7 +591,7 @@ public class SegmentedDownloadService {
                 "录像合并超出任务空间预算", "录像临时存储已满或无法安全统计", "录像源文件超出字节上限",
                 "完整唯一视频帧不足申请时长", "接缝不存在唯一连续帧锚点", "接缝未证明新分段延续前段",
                 "接缝完整重叠超出30秒搜索边界", "接缝丢弃区含未验证相同的帧", "相邻分段的音视频格式不一致",
-                "合并成品的真实帧数或播放时长不满足申请范围", "成品实际音频首尾未覆盖视频范围", "源音频首尾未覆盖视频裁剪范围");
+                "合并成品的真实帧数或播放时长不满足申请范围", "成品实际音频首尾未覆盖视频范围", "源音频首尾未覆盖视频裁剪范围", "源音频存在真实间隙或无法解释的时钟漂移");
         List<String> chain = new ArrayList<>();
         for (Throwable current = failure; current != null && chain.size() < 8; current = current.getCause()) {
             String message = current.getMessage();
