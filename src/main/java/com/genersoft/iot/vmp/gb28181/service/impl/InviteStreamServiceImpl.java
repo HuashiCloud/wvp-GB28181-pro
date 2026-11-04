@@ -391,7 +391,6 @@ public class InviteStreamServiceImpl implements IInviteStreamService {
         return key;
     }
 
-
     @Override
     public void clearInviteInfo(String deviceId) {
         List<InviteInfo> inviteInfoList = getAllInviteInfo();
