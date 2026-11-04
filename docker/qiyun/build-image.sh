@@ -3,7 +3,8 @@ set -euo pipefail
 umask 077
 
 # 先在普通完整 checkout 中以 Java 21 构建前端与 Jar；Maven 不会自动构建前端。
-# 先在 web/ 执行 npm run build:prod，再在仓库根目录执行 mvn package。
+# 当前已验证的 Node 26 在 web/ 执行 NODE_OPTIONS=--openssl-legacy-provider npm run build:prod，
+# 再在仓库根目录以 Java 21 执行 mvn package。
 # 共享 worktree 的 JGit 可能误认 common HEAD，
 # 因此必须显式提供实际应用版本，不能拿当前脚本分支或 Docker 标签代替 Jar 内的版本。
 if [[ $# -ne 4 ]]; then
